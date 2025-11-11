@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameInput : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class GameInput : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
         playerInputActions = new PlayerInputActions();
         playerInputActions.Enable();
     }
@@ -21,6 +21,12 @@ public class GameInput : MonoBehaviour
     {
         Vector2 Grid = playerInputActions.Player.Move.ReadValue<Vector2>();
         return Grid;
+    }
+
+    public Vector3 GetMousePosition() // для сравнения мыши с персонажем, чтобы он смотрел в сторону мыши
+    {
+        Vector3 mousePos = Mouse.current.position.ReadValue();
+        return mousePos;
     }
 
 }
