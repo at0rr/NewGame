@@ -23,10 +23,9 @@ public class GameInput : MonoBehaviour
         return Grid;
     }
 
-    public Vector3 GetMousePosition() // для сравнения мыши с персонажем, чтобы он смотрел в сторону мыши
-    {
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-        return mousePos;
-    }
-
+    // public Vector3 GetMousePosition() // для сравнения мыши с персонажем, чтобы он смотрел в сторону мыши
+    // {
+    //     Vector3 mousePos = Mouse.current.position.ReadValue();
+    //     return mousePos;
+    // }
 }
