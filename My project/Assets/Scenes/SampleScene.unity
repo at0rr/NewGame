@@ -337,27 +337,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8e2395e031167a4ea3d592bbdbcaec7, type: 3}
---- !u!1 &308101958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8164813728556195573, guid: 09f9c9bd6a7062d4bacdc063b2a3221a, type: 3}
-  m_PrefabInstance: {fileID: 8841671322934702708}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &308101962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308101958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d66a105af48a7e449b37f04c24194bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingState: 1
-  roamingDistanceMax: 7
-  roamingDistanceMin: 3
-  roamingTimerMax: 2
 --- !u!1 &333370760
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +878,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.06666667
+  m_VoxelSize: 0.1
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
@@ -1448,10 +1427,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8155573892772652888, guid: 09f9c9bd6a7062d4bacdc063b2a3221a, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8164813728556195573, guid: 09f9c9bd6a7062d4bacdc063b2a3221a, type: 3}
       propertyPath: m_Name
       value: Slime
@@ -1459,10 +1434,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8164813728556195573, guid: 09f9c9bd6a7062d4bacdc063b2a3221a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 308101962}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f9c9bd6a7062d4bacdc063b2a3221a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
