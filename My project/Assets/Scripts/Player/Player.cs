@@ -32,7 +32,8 @@ public class Player : MonoBehaviour
     private void HandleMovement()
     {
         Vector2 Grid = GameInput.Instance.GetMoveVector(); // сетка движения персонажа
-        Grid = Grid.normalized; // теперь не будет буста скорости при движении по диагонали
+        //Grid = Grid.normalized; // теперь не будет буста скорости при движении по диагонали
+        // добавил в движке движение стрелками, это автоматически нормальизовало ходьбу, поэтому эта строка теперь не нужна
         rb.MovePosition(rb.position + Grid * (playerSpeed * Time.fixedDeltaTime));
         // Time.fixedDeltaTime - можно воспринимать как константу (она равна 0.02)
         // умножаем это всё для корректировки скорости
