@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 958638757524427791}
   - component: {fileID: 3622724408599684}
   m_Layer: 0
-  m_Name: SlimeVisual
+  m_Name: SkeletonVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 15873926, guid: 1a81ab0264a070043ae087f41d07317a, type: 3}
+  m_Sprite: {fileID: -1034856305, guid: 460391267a56b7a4cada614b49b34067, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &3622724408599684
 Animator:
   serializedVersion: 7
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 8892990419399378661}
   - component: {fileID: 4805670502502912092}
   m_Layer: 0
-  m_Name: SlimeShadow
+  m_Name: SkeletonShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,8 +137,8 @@ Transform:
   m_GameObject: {fileID: 6654268694117639005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.108, y: 0.009, z: 0}
+  m_LocalScale: {x: 1.51, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8510405770007640185}
@@ -208,11 +208,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6840113047321672552}
   - component: {fileID: 8155573892772652888}
-  - component: {fileID: 7730652925077105114}
+  - component: {fileID: 6468424327445224648}
   - component: {fileID: 7781033089252581726}
   - component: {fileID: 7771645203188846202}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +227,7 @@ Transform:
   m_GameObject: {fileID: 8164813728556195573}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.92, y: 0.12, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -261,8 +261,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &7730652925077105114
-CapsuleCollider2D:
+--- !u!61 &6468424327445224648
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -295,9 +295,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0019822114, y: -0.007466913}
-  m_Size: {x: 0.92881227, y: 0.59522367}
-  m_Direction: 1
+  m_Offset: {x: 0.18896267, y: 1.0559715}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.86011237, y: 2.1457422}
+  m_EdgeRadius: 0
 --- !u!195 &7781033089252581726
 NavMeshAgent:
   m_ObjectHideFlags: 0

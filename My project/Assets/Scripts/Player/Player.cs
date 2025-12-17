@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float playerSpeed = 5f;
     // благодаря [SerializeField] можно менять переменную в самом движке, а не коде
     private Vector2 supGrid;
+    Vector2 Grid;
 
 
     private Rigidbody2D rb; // эта штука для перемещения объектов (аналог БЕГАЮЩЕГО крестоносца)
@@ -24,6 +25,12 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Update() {
+        Grid = GameInput.Instance.GetMoveVector(); // сетка движения персонажа
+        //Grid = Grid.normalized; // теперь не будет буста скорости при движении по диагонали
+        // добавил в движке движение стрелками, это автоматически нормализовало ходьбу, поэтому эта строка теперь не нужна
+    }
+
     private void FixedUpdate() // эта функция запускается каждый кадр в игре
     {
         HandleMovement();
@@ -31,9 +38,6 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        Vector2 Grid = GameInput.Instance.GetMoveVector(); // сетка движения персонажа
-        //Grid = Grid.normalized; // теперь не будет буста скорости при движении по диагонали
-        // добавил в движке движение стрелками, это автоматически нормальизовало ходьбу, поэтому эта строка теперь не нужна
         rb.MovePosition(rb.position + Grid * (playerSpeed * Time.fixedDeltaTime));
         // Time.fixedDeltaTime - можно воспринимать как константу (она равна 0.02)
         // умножаем это всё для корректировки скорости
