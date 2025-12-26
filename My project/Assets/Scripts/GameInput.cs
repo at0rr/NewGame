@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,11 +11,20 @@ public class GameInput : MonoBehaviour
     // второй вариант создания движений перса (первый в тг)
     // (файлик с тем же названием лежит в ассетах, его можно посмотреть)
 
+    public event EventHandler OnPlayerAttack; // создаём событие
+
     private void Awake()
     {
         Instance = this;
         playerInputActions = new PlayerInputActions();
         playerInputActions.Enable();
+
+        playerInputActions.Combat.Attack.started += PlayerAttack_started; // атака персонажа
+    }
+
+    private void PlayerAttack_started(InputAction.CallbackContext obj)
+    {
+        if (OnPlayerAttack != null) OnPlayerAttack.Invoke(this, EventArgs.Empty);
     }
 
     public Vector2 GetMoveVector()
@@ -25,6 +35,7 @@ public class GameInput : MonoBehaviour
 
     // public Vector3 GetMousePosition() // для сравнения мыши с персонажем, чтобы он смотрел в сторону мыши
     // {
+    //     // я это используя для оружия
     //     Vector3 mousePos = Mouse.current.position.ReadValue();
     //     return mousePos;
     // }

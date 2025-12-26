@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
+[SelectionBase] // для того, чтобы при перетаскивании в движке перса, перетаскивался не только спрайт
+
 public class Player : MonoBehaviour
 {
 
@@ -23,6 +25,16 @@ public class Player : MonoBehaviour
     {
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Start()
+    {
+        GameInput.Instance.OnPlayerAttack += Player_OnPlayerAttack;
+    }
+
+    private void Player_OnPlayerAttack(object sender, System.EventArgs e)
+    {
+        ActiveWeapon.Instance.GetActiveWeapon().Attack(); // вызываем активное оружее и выполняем атаку
     }
 
     private void Update() {
@@ -59,6 +71,7 @@ public class Player : MonoBehaviour
 
     // public Vector3 GetPlayerPosition() // для сравнения мыши с персонажем, чтобы он смотрел в сторону мыши
     // {
+    //     // я это используя для оружия
     //     Vector3 playerPos = Camera.main.WorldToScreenPoint(transform.position);
     //     return playerPos;
     // }
