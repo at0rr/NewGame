@@ -34,13 +34,13 @@ public class EnemySpawner : MonoBehaviour
         {
             spawnPos = new Vector2(Random.Range(-mapBounds.x / 2, mapBounds.x / 2),
             Random.Range(-mapBounds.y / 2, mapBounds.y / 2));
-        } while (IsPointInCameraView(spawnPos)); // повторяем рандом, пока враг не будет спавниться за пределами камеры
+        } while (IsPointInCameraView(spawnPos)); // повторяем рандом, пока враг не будет спавниться за пределами камеры 
 
         Instantiate(enemyPrefab, spawnPos, Quaternion.identity /*смотрит в стандартном направлении*/);
         // создаём врага
     }
 
-    private bool IsPointInCameraView(Vector3 point) // для проверки на то, что точка находится в камере
+    private bool IsPointInCameraView(Vector2 point) // для проверки на то, что точка находится в камере
     {
         Vector2 cameraPos = mainCamera.transform.position;
 

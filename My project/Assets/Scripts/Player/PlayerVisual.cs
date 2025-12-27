@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerVisual : MonoBehaviour
 {
-    private Animator animator; // Получили доступ к аниматору (сам хз)
+    private Animator animator; // Получили доступ к аниматору
     private SpriteRenderer spriteRenderer;
     private const string IS_RUNNING = "IsRunning"; //с помощью неё будем обновлять аниматор
 

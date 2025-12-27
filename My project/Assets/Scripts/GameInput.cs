@@ -8,7 +8,7 @@ public class GameInput : MonoBehaviour
     public static GameInput Instance { get; private set; }
 
     private PlayerInputActions playerInputActions;
-    // второй вариант создания движений перса (первый в тг)
+    // второй вариант создания движений перса
     // (файлик с тем же названием лежит в ассетах, его можно посмотреть)
 
     public event EventHandler OnPlayerAttack; // создаём событие

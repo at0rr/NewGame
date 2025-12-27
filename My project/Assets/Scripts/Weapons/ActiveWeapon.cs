@@ -14,12 +14,12 @@ public class ActiveWeapon : MonoBehaviour
 
     private void Update()
     {
-        FollowMousePosition();
+        FollowSidePosition();
     }
 
     public Sword GetActiveWeapon() => sword;
 
-    private void FollowMousePosition() // поворот оружия в нужную сторону
+    private void FollowSidePosition() // поворот оружия в нужную сторону
     {
         // Vector3 mousePos = GameInput.Instance.GetMousePosition();
         // Vector3 playerPos = Player.Instance.GetPlayerPosition();

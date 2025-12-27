@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour
 
     private NavMeshAgent navMeshAgent; //navMesh - это система навигации для NPC
 
-    private Transform player;
+    private Transform player; // для будущей позиции игрока
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent.speed = enemySpeed; // скорость скелетов
         if (Player.Instance != null)
         {
-            player = Player.Instance.transform;
+            player = Player.Instance.transform; // подтягиваем позицию игрока
         }
     }
 

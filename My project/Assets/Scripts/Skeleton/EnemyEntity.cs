@@ -7,6 +7,7 @@ public class EnemyEntity : MonoBehaviour
     [SerializeField] private GameObject experiencePickupPrefab; // префаб кружка xp
 
     private int _currHealth;
+    private bool isDead = false; // чтобы не наносить урон мёртвому
 
     private void Start()
     {
@@ -15,9 +16,14 @@ public class EnemyEntity : MonoBehaviour
 
     public void TakeDamage(int damage) // враг получает урон
     {
+        if (isDead) return; // если враг мёртв, то ничего не делаем
         _currHealth -= damage;
 
-        if (_currHealth <= 0) DetectDeath();
+        if (_currHealth <= 0)
+        {
+            isDead = true;
+            DetectDeath();
+        }
     }
 
     private void DetectDeath()

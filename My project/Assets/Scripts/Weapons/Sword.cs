@@ -28,6 +28,7 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision == null || collision.transform == null) return; // проверка на уничттоженный объект
         if (collision.transform.TryGetComponent(out EnemyEntity enemyEntity)) enemyEntity.TakeDamage(_damageAmount);
         // проверка на столкноверние с каким то другим коллайдером
     }

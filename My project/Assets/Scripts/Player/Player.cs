@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
     private void Awake() // запускается до Start() 1 раз, ею мы инициализируем компоненты
     {
         Instance = this;
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D в движке отвечает за физику
+        // здесь мы её пробуждаем
     }
 
     void Start()

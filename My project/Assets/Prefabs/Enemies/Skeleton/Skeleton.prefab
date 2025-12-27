@@ -356,4 +356,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 20
-  experiencePickupPrefab: {fileID: 0}
+  experiencePickupPrefab: {fileID: 3708190413059888409, guid: f64901d365c92ff408f4c65e8676df21, type: 3}
